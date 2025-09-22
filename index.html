@@ -64,36 +64,61 @@
 
       <!-- Мобильное меню (скрыто по умолчанию) -->
       <div class="mobile-menu">
+        <!--is-open  (добавить класс,чтобы появилось меню навигации)-->
         <button class="menu-close-btn" type="button">
           <svg class="menu-close-icon" width="8" height="8">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <div class="header-menu">
+          <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+              <li>
+                <a href="./index.html" class="site-menu-nav current">Studio</a>
+              </li>
+              <li><a href="" class="site-menu-nav">Portfolio</a></li>
+              <li><a href="" class="site-menu-nav">Contacts</a></li>
+            </ul>
+          </nav>
 
-        <nav class="mobile-nav">
-          <ul class="mobile-nav-list">
-            <li>
-              <a href="./index.html" class="site-menu-nav current">Studio</a>
-            </li>
-            <li><a href="" class="site-menu-nav">Portfolio</a></li>
-            <li><a href="" class="site-menu-nav">Contacts</a></li>
-          </ul>
-        </nav>
-
-        <div class="mobile-contacts">
-          <a href="tel:+11(000)111-11-11" class="contact-link"
-            >+11(000)111-11-11</a
-          >
-          <a href="mailto:info@devstudio.com" class="contact-link"
-            >info@devstudio.com</a
-          >
+          <div class="mobile-contacts">
+            <a href="tel:+11(000)111-11-11" class="contact-link"
+              >+11(000)111-11-11</a
+            >
+            <a href="mailto:info@devstudio.com" class="contact-link"
+              >info@devstudio.com</a
+            >
+          </div>
         </div>
-
         <ul class="mobile-socials">
-          <li><a href="#" class="mobile-social-link">…</a></li>
-          <li><a href="#" class="mobile-social-link">…</a></li>
-          <li><a href="#" class="mobile-social-link">…</a></li>
-          <li><a href="#" class="mobile-social-link">…</a></li>
+          <li>
+            <a href="#" class="mobile-social-link">
+              <svg class="mobile-social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-instagram-2"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-social-link">
+              <svg class="mobile-social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-twitter-1"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-social-link">
+              <svg class="mobile-social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-facebook-1"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-social-link">
+              <svg class="mobile-social-icon" width="16" height="16">
+                <use href="./images/icons.svg#icon-linkedin-1"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
@@ -645,7 +670,8 @@
       </div>
     </footer>
 
-    <div class="backdrop">
+    <div class="backdrop is-hidden">
+      <!--убрать is-hidden (чтобы появилась модалка)-->
       <div class="modal">
         <button class="modal-close-btn" type="button">
           <svg class="modal-close-icon" width="8" height="8">

@@ -150,16 +150,29 @@ a {
 
 /* мобильное меню */
 .mobile-menu {
+  position: fixed; /* перекрывает весь экран */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
   max-width: 320px;
   margin: 0 auto;
   padding: 24px 24px 40px 16px;
   background: #fff;
-  position: relative;
-  height: 640px;
-  display: none; /* скрыто по умолчанию */
+  box-sizing: border-box;
+
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box;
+
+  transform: translateX(100%); /* изначально скрыто */
+  transition: transform 250ms ease-in-out;
+}
+
+/* Когда добавим класс is-open */
+.mobile-menu.is-open {
+  transform: translateX(0);
 }
 
 .menu-close-btn {
@@ -197,7 +210,6 @@ a {
   display: flex;
   gap: 40px;
   list-style: none;
-  margin-top: 0;
 }
 
 .mobile-nav-list {
@@ -319,7 +331,10 @@ a {
     display: flex;
     gap: 40px;
   }
-
+  .menu-toggle,
+  .mobile-menu {
+    display: none;
+  }
   .site-menu-nav:hover,
   .site-menu-nav:focus {
     color: #404bbf;
@@ -489,6 +504,8 @@ a {
 .features-content {
   display: flex;
 }
+/*добавил*/
+
 .section-title {
   font-weight: 500;
   font-size: 20px;
@@ -510,6 +527,11 @@ a {
   letter-spacing: 0.02em;
   color: #434455;
 }
+.feature-icon-box,
+.feature-icon {
+  display: none; /* Скрываем иконки в мобильной версии */
+}
+
 /*Для мобильной версии*/
 @media (max-width: 320px) {
   .features-content {
@@ -523,10 +545,6 @@ a {
   }
   .feature-text {
     font-weight: 500;
-  }
-  .feature-icon-box,
-  .feature-icon {
-    display: none; /* Скрываем иконки в мобильной версии */
   }
 }
 
@@ -545,10 +563,6 @@ a {
   .feature-text {
     font-weight: 500;
     max-width: 356px;
-  }
-  .feature-icon-box,
-  .feature-icon {
-    display: none; /* Скрываем иконки в мобильной версии */
   }
 }
 
@@ -576,6 +590,7 @@ a {
   .feature-icon {
     width: 64px;
     height: 64px;
+    display: flex;
   }
   .features-item {
     width: calc((100% - 72px) / 4);
@@ -1151,10 +1166,11 @@ a {
 .modal-close-btn:focus .modal-close-icon {
   fill: #ffffff;
 }
-/*.is-hidden {
+.is-hidden {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;}*/
+  pointer-events: none;
+}
 .modal-title {
   font-weight: 500;
   font-size: 16px;
