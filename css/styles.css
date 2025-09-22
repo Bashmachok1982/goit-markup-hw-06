@@ -524,6 +524,10 @@ a {
   .feature-text {
     font-weight: 500;
   }
+  .feature-icon-box,
+  .feature-icon {
+    display: none; /* Скрываем иконки в мобильной версии */
+  }
 }
 
 /*Для планшетной версии*/
@@ -541,6 +545,10 @@ a {
   .feature-text {
     font-weight: 500;
     max-width: 356px;
+  }
+  .feature-icon-box,
+  .feature-icon {
+    display: none; /* Скрываем иконки в мобильной версии */
   }
 }
 
@@ -993,6 +1001,11 @@ a {
     display: flex;
     flex-direction: column;
   }
+  .footer-form {
+    flex-direction: column; /* Переключаем на вертикальное расположение */
+    align-items: stretch; /* Растягиваем элементы по ширине */
+    gap: 16px; /* Уменьшаем gap для компактности */
+  }
   .footer-social-text {
     text-align: center;
   }
@@ -1004,7 +1017,8 @@ a {
     text-align: center;
   }
   .footer-subscribe-btn {
-    margin-top: 16px;
+    margin-top: 0; /* Убираем лишний margin-top, так как gap уже обеспечивает отступ */
+    width: 100%; /* Растягиваем кнопку на всю ширину формы */
   }
 }
 
@@ -1079,17 +1093,7 @@ a {
     border: none;
   }
 }
-/* Глобальные стили для модального окна */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
-body.modal-open {
-  overflow: hidden; /* Предотвращаем скроллинг при открытом модальном окне */
-}
 /* ===== MODAL BASE (mobile-first) ===== */
 .backdrop {
   position: fixed;
@@ -1147,11 +1151,10 @@ body.modal-open {
 .modal-close-btn:focus .modal-close-icon {
   fill: #ffffff;
 }
-.is-hidden {
+/*.is-hidden {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
-}
+  pointer-events: none;}*/
 .modal-title {
   font-weight: 500;
   font-size: 16px;
