@@ -34,17 +34,13 @@ ol {
 img {
   display: block;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
-/* Общий контейнер */
 .container {
   margin: 0 auto;
 }
-
 /* ================= HEADER ================= */
 .top-line-bg {
   position: relative;
@@ -54,14 +50,11 @@ a {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-
 .top-line-bg .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-/* Логотип */
 .logo-link.logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -73,11 +66,9 @@ a {
   display: flex;
   align-items: center;
 }
-
 .logo-studio {
   color: #2e2f42;
 }
-/* БАЗА (работает и для планшета, и для десктопа) */
 .site-menu-nav {
   position: relative;
   display: inline-block;
@@ -90,12 +81,9 @@ a {
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* активная ссылка (например, Studio) */
 .site-menu-nav.current {
   color: #404bbf;
 }
-
 .site-menu-nav.current::after {
   content: '';
   position: absolute;
@@ -111,7 +99,6 @@ a {
   flex-direction: column;
   gap: 12px;
 }
-
 .contact-link {
   font-weight: 400;
   font-size: 16px;
@@ -124,13 +111,11 @@ a {
   max-width: 320px;
   padding: 0 16px;
 }
-
 .logo-link.logo {
   padding: 16px 0;
   width: 115px;
 }
-
-/* бургер */
+/* кнопка для вызова меню */
 .menu-toggle {
   display: flex;
   align-items: center;
@@ -141,40 +126,32 @@ a {
   background: transparent;
   cursor: pointer;
 }
-
 .menu-icon {
   width: 24px;
   height: 24px;
   fill: #2f2f37;
 }
-
 /* мобильное меню */
 .mobile-menu {
-  position: fixed; /* перекрывает весь экран */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-
   max-width: 320px;
   margin: 0 auto;
   padding: 24px 24px 40px 16px;
   background: #fff;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  transform: translateX(100%); /* изначально скрыто */
+  transform: translateX(100%);
   transition: transform 250ms ease-in-out;
 }
-
-/* Когда добавим класс is-open */
 .mobile-menu.is-open {
   transform: translateX(0);
 }
-
 .menu-close-btn {
   position: absolute;
   top: 24px;
@@ -191,12 +168,10 @@ a {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .menu-close-icon {
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .header-menu {
   display: flex;
   flex-direction: column;
@@ -204,21 +179,17 @@ a {
   padding-left: 0;
   margin-top: 72px;
 }
-
-/* мобильная навигация */
 .mobile-nav {
   display: flex;
   gap: 40px;
   list-style: none;
 }
-
 .mobile-nav-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding-left: 0;
 }
-
 .mobile-nav a {
   font-weight: 700;
   font-size: 36px;
@@ -227,16 +198,12 @@ a {
   color: #2e2f42;
   text-align: left;
 }
-
-/* мобильные контакты */
 .mobile-contacts {
   display: flex;
   flex-direction: column;
   gap: 24px;
   justify-content: center;
 }
-
-/* соцсети в мобильном */
 .mobile-socials {
   display: flex;
   justify-content: center;
@@ -244,7 +211,6 @@ a {
   padding: 0;
   margin-top: 48px;
 }
-
 .mobile-social-link {
   display: flex;
   align-items: center;
@@ -255,7 +221,6 @@ a {
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .mobile-social-icon {
   fill: currentColor;
   color: #f4f4fd;
@@ -263,70 +228,58 @@ a {
   display: block;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* скрываем десктопное меню и контакты на мобилке */
 .top-nav,
 .address {
   display: none;
 }
-
 /* ================= ПЛАНШЕТНАЯ ВЕРСИЯ ================= */
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
     padding: 0 16px;
   }
-
   /* показываем меню и контакты */
   .top-nav,
   .address {
     display: flex;
     align-items: center;
   }
-
   .logo-link.logo {
     padding: 24px 0;
   }
-
   /* скрываем бургер и мобильное меню */
   .menu-toggle,
   .mobile-menu {
     display: none;
   }
-
   .menu-nav {
     display: flex;
     gap: 40px;
   }
-
   .address {
     font-style: normal;
     padding: 16px 0;
   }
-
   .contacts {
     flex-direction: column;
     gap: 12px;
   }
 }
-
 /* ================= ДЕСКТОПНАЯ ВЕРСИЯ ================= */
 @media (min-width: 1158px) {
   .container {
     max-width: 1158px;
     padding: 0 15px;
   }
-
   .logo-link.logo {
     padding: 24px 0;
   }
-
   .top-nav,
   .address {
     display: flex;
     align-items: center;
   }
-
   .menu-nav {
     display: flex;
     gap: 40px;
@@ -339,22 +292,18 @@ a {
   .site-menu-nav:focus {
     color: #404bbf;
   }
-
   .contacts {
     flex-direction: row;
     gap: 40px;
   }
-
   .contact-link {
     padding: 24px 0;
   }
-
   .contact-link:hover,
   .contact-link:focus {
     color: #404bbf;
   }
 }
-
 /* Общие селекторы для HERO */
 .dark-bg {
   background-repeat: no-repeat;
@@ -366,7 +315,6 @@ a {
   text-align: center;
   background: rgba(46, 47, 66, 0.7);
 }
-
 .dark-bg .container {
   width: 100%;
   height: 100%;
@@ -375,7 +323,6 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-
 .hero-title {
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -383,7 +330,6 @@ a {
   font-size: 56px;
   line-height: 1.07;
 }
-
 .hero-btn {
   border-radius: 4px;
   background: #4d5ae5;
@@ -398,7 +344,6 @@ a {
   text-align: center;
   white-space: nowrap;
 }
-
 /* Мобильная версия */
 @media (max-width: 320px) {
   .dark-bg {
@@ -413,7 +358,6 @@ a {
       ),
       url(../images/people-office-desktop-mobile.jpg);
   }
-
   .hero-title {
     font-size: 36px;
     line-height: 1.11111;
@@ -421,13 +365,12 @@ a {
     margin-bottom: 72px;
   }
 }
-
 /* Планшетная версия */
 @media (min-width: 768px) {
   .dark-bg {
     width: 768px;
     padding: 112px 0;
-    background-size: cover; /* Подтверждаем cover для фона */
+    background-size: cover;
     background-image: linear-gradient(
         to bottom,
         rgba(46, 47, 66, 0.7),
@@ -435,17 +378,14 @@ a {
       ),
       url(../images/people-office-desktop-tablet.jpg);
   }
-
   .container {
     max-width: 768px;
   }
-
   .hero-title {
     margin-bottom: 36px;
     max-width: 496px;
   }
 }
-
 /* Десктопная версия */
 @media (min-width: 1158px) {
   .dark-bg {
@@ -504,8 +444,6 @@ a {
 .features-content {
   display: flex;
 }
-/*добавил*/
-
 .section-title {
   font-weight: 500;
   font-size: 20px;
@@ -529,9 +467,8 @@ a {
 }
 .feature-icon-box,
 .feature-icon {
-  display: none; /* Скрываем иконки в мобильной версии */
+  display: none;
 }
-
 /*Для мобильной версии*/
 @media (max-width: 320px) {
   .features-content {
@@ -547,7 +484,6 @@ a {
     font-weight: 500;
   }
 }
-
 /*Для планшетной версии*/
 @media (min-width: 768px) {
   .features-content {
@@ -565,7 +501,6 @@ a {
     max-width: 356px;
   }
 }
-
 /*Для десктопной версии*/
 @media (min-width: 1158px) {
   .features {
@@ -574,19 +509,17 @@ a {
   .features-content {
     gap: 24px;
   }
-  /*добавил*/
   .feature-icon-box {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #8e8f99;
     border-radius: 4px;
-    width: 100%; /* теперь ширина = ширине колонки */
+    width: 100%;
     height: 112px;
     background: #f4f4fd;
-    margin-bottom: 8px; /* отступ между иконкой и заголовком */
+    margin-bottom: 8px;
   }
-  /*добавил*/
   .feature-icon {
     width: 64px;
     height: 64px;
@@ -595,7 +528,6 @@ a {
   .features-item {
     width: calc((100% - 72px) / 4);
   }
-
   .feature-title {
     margin-bottom: 8px;
   }
@@ -687,20 +619,18 @@ a {
     flex-direction: column;
   }
 }
-
 /*Планшетная версия*/
 @media (min-width: 768px) {
   .team-list {
     flex-wrap: wrap;
-    justify-content: center; /* карточки центрируются */
-    row-gap: 64px; /* вертикальный отступ */
-    column-gap: 24px; /* горизонтальный отступ */
+    justify-content: center;
+    row-gap: 64px;
+    column-gap: 24px;
     padding: 0;
     margin: 0;
     list-style: none;
   }
 }
-
 /*Десктопная версия*/
 @media (min-width: 1158px) {
   .light-bg {
@@ -715,14 +645,13 @@ a {
   }
   .team-card:hover,
   .team-card:focus {
-    /* усиливаем тень */
     box-shadow: 0px 4px 6px rgba(46, 47, 66, 0.1),
       0px 4px 4px rgba(46, 47, 66, 0.12), 0px 6px 8px rgba(46, 47, 66, 0.1);
   }
   .team-social-link:hover,
   .team-social-link:focus {
-    background-color: #404bbf; /* другой синий при hover */
-    color: #ffffff; /* иконка меняет цвет */
+    background-color: #404bbf;
+    color: #ffffff;
   }
 }
 /*Общие для секции ПОРТФОЛИО*/
@@ -743,7 +672,6 @@ a {
 .portfolio-list {
   display: flex;
   gap: 48px;
-  /*align-items: center;*/
   padding: 0;
   margin: 0;
   list-style: none;
@@ -796,21 +724,19 @@ a {
     width: 288px;
   }
 }
-
 /*Планшетная версия*/
 @media (min-width: 768px) {
   .portfolio-list {
     align-items: center;
     flex-wrap: wrap;
-    row-gap: 72px; /* вертикальный отступ */
-    column-gap: 24px; /* горизонтальный отступ */
+    row-gap: 72px;
+    column-gap: 24px;
     justify-content: center;
   }
   .portfolio-item {
     width: 356px;
   }
 }
-
 /*Десктопная версия*/
 @media (min-width: 1158px) {
   .section-portfolio {
@@ -850,8 +776,6 @@ a {
     height: 100%;
     transform: translateY(100%);
     display: block;
-
-    /* C6, C7 — только transform */
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .portfolio-item:hover .text-overlay {
@@ -921,7 +845,6 @@ a {
   height: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
-
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-icon {
@@ -930,7 +853,6 @@ a {
   width: 24px;
   height: 24px;
   display: block;
-
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-subscribe {
@@ -959,13 +881,11 @@ a {
   height: 40px;
   background-color: transparent;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-
   font-weight: 400;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
   color: #fff;
-
   padding-left: 16px;
 }
 .footer-input::placeholder {
@@ -979,7 +899,6 @@ a {
   height: 40px;
   background: #4d5ae5;
   border: none;
-
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -1000,7 +919,6 @@ a {
 .footer-btn-use {
   fill: white;
 }
-
 /*Для мобильной версии*/
 @media (max-width: 320px) {
   .footer-section-dark-bg {
@@ -1017,9 +935,9 @@ a {
     flex-direction: column;
   }
   .footer-form {
-    flex-direction: column; /* Переключаем на вертикальное расположение */
-    align-items: stretch; /* Растягиваем элементы по ширине */
-    gap: 16px; /* Уменьшаем gap для компактности */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
   }
   .footer-social-text {
     text-align: center;
@@ -1032,18 +950,15 @@ a {
     text-align: center;
   }
   .footer-subscribe-btn {
-    margin-top: 0; /* Убираем лишний margin-top, так как gap уже обеспечивает отступ */
-    width: 100%; /* Растягиваем кнопку на всю ширину формы */
+    margin-top: 0;
+    width: 100%;
   }
 }
-
 /*Для планшетной версии*/
 @media (min-width: 768px) {
   .footer-section-dark-bg .container {
-    /*max-width: 738px;*/
     padding: 0 16px;
     margin: 0 auto;
-
     flex-wrap: wrap;
     row-gap: 72px;
     column-gap: 24px;
@@ -1054,21 +969,20 @@ a {
   }
   .footer-content,
   .footer-subscribe {
-    margin-left: 92px; /* 108 - 16 (учитываем паддинг контейнера) */
+    margin-left: 92px;
   }
   .footer-subscribe {
     display: flex;
   }
   .footer-form {
     display: flex;
-    flex-direction: row; /* ← добавить */
-    gap: 24px; /* ← вот этот gap решает прилипание */
+    flex-direction: row;
+    gap: 24px;
   }
   .footer-subscribe-btn {
-    margin-top: 0; /* ← убрать лишний отступ */
+    margin-top: 0;
   }
 }
-
 /*Для десктопной версии*/
 @media (min-width: 1158px) {
   .footer-section-dark-bg {
@@ -1076,29 +990,28 @@ a {
     width: 100%;
   }
   .footer-section-dark-bg .container {
-    align-items: baseline; /*добавил*/
-    flex-direction: row; /* ← Важно! */
+    align-items: baseline;
+    flex-direction: row;
     justify-content: flex-start;
     flex-wrap: nowrap;
-    gap: 100px; /* можно поиграть расстоянием между блоками */
-    max-width: 1158px; /* Ограничиваем ширину контейнера */
-    margin: 0 auto; /* Центрируем контейнер */
+    gap: 100px;
+    max-width: 1158px;
+    margin: 0 auto;
   }
   .footer-content {
-    margin: 0; /*добавил*/
+    margin: 0;
   }
-
   .footer-social-link:hover,
   .footer-social-link:focus {
-    background-color: #31d0aa; /* другой синий при hover */
+    background-color: #31d0aa;
   }
   .footer-form {
     flex-direction: row;
-    gap: 24px; /* ← добавляем gap */
+    gap: 24px;
   }
   .footer-subscribe {
     margin-left: 0;
-    flex-direction: column; /* текст над формой */
+    flex-direction: column;
   }
   .footer-subscribe-btn:hover,
   .footer-subscribe-btn:focus,
@@ -1108,7 +1021,6 @@ a {
     border: none;
   }
 }
-
 /* ===== MODAL BASE (mobile-first) ===== */
 .backdrop {
   position: fixed;
@@ -1136,7 +1048,6 @@ a {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .modal-close-btn {
   position: absolute;
   top: 24px;
@@ -1180,7 +1091,6 @@ a {
   color: #2e2f42;
   letter-spacing: 0.02em;
 }
-
 .form-container {
   margin-bottom: 8px;
 }
@@ -1223,7 +1133,6 @@ a {
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .modal-text {
   width: 100%;
   height: 120px;
@@ -1243,8 +1152,6 @@ a {
 .modal-text:focus {
   border-color: #4d5ae5;
 }
-
-/* Чекбокс */
 .modal-checkbox-container {
   margin-top: 16px;
   margin-bottom: 24px;
@@ -1285,8 +1192,6 @@ a {
   color: #4d5ae5;
   text-decoration: underline;
 }
-
-/* Кнопка */
 .modal-btn {
   display: block;
   min-width: 169px;
@@ -1307,23 +1212,21 @@ a {
 .modal-btn:focus {
   background-color: #404bbf;
 }
-
 /* ===== TABLET и DESKTOP===== */
 @media (min-width: 768px) {
   .modal {
     width: 408px; /* шире */
     min-height: 584px;
     padding: 72px 24px 24px 24px;
-    max-width: none; /* убираем ограничение */
+    max-width: none;
   }
 }
-
 /* ===== DESKTOP ===== */
 @media (min-width: 1158px) {
   .modal {
-    width: 408px; /* ещё шире */
+    width: 408px;
     min-height: 584px;
     padding: 72px 24px 24px 24px;
-    max-width: none; /* убираем ограничение */
+    max-width: none;
   }
 }
