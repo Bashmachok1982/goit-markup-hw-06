@@ -23,12 +23,11 @@
     <!---==============================HEADER===============================================-->
     <header class="top-line-bg">
       <div class="container">
-        <a href="./index.html" class="logo-link logo">
-          WEB<span class="logo-studio">Studio</span>
-        </a>
-
         <!-- Десктоп/планшетное меню -->
         <nav class="top-nav" aria-label="main menu">
+          <a href="./index.html" class="logo-link logo">
+            WEB<span class="logo-studio">Studio</span>
+          </a>
           <ul class="menu-nav">
             <li>
               <a href="./index.html" class="site-menu-nav current">Studio</a>
@@ -63,13 +62,14 @@
       </div>
 
       <!---==============================MOBILE MENU===============================================-->
-      <div class="mobile-menu ">
-        <!--is-open  (добавить класс,чтобы появилось меню навигации)-->
+      <div class="mobile-menu">
+        <!--is-open  (убрать класс,чтобы появилось меню навигации)-->
         <button class="menu-close-btn" type="button">
           <svg class="menu-close-icon" width="8" height="8">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+
         <div class="header-menu">
           <nav class="mobile-nav">
             <ul class="mobile-nav-list">
@@ -83,46 +83,46 @@
 
           <div class="address-social">
             <div class="mobile-contacts">
-              <a href="tel:+11(000)111-11-11" class="contact-link"
+              <a href="tel:+11(000)111-11-11" class="contact-link current"
                 >+11(000)111-11-11</a
               >
               <a href="mailto:info@devstudio.com" class="contact-link"
                 >info@devstudio.com</a
               >
             </div>
-                    
-                    <ul class="mobile-socials">
-            <li>
-              <a href="#" class="mobile-social-link">
-                <svg class="mobile-social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-instagram-2"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="mobile-social-link">
-                <svg class="mobile-social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-twitter-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="mobile-social-link">
-                <svg class="mobile-social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-facebook-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="mobile-social-link">
-                <svg class="mobile-social-icon" width="16" height="16">
-                  <use href="./images/icons.svg#icon-linkedin-1"></use>
-                </svg>
-              </a>
-            </li>
-                    </ul>
-                    </div>
+
+            <ul class="mobile-socials">
+              <li>
+                <a href="#" class="mobile-social-link">
+                  <svg class="mobile-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-instagram-2"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="mobile-social-link">
+                  <svg class="mobile-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-twitter-1"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="mobile-social-link">
+                  <svg class="mobile-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-facebook-1"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="mobile-social-link">
+                  <svg class="mobile-social-icon" width="16" height="16">
+                    <use href="./images/icons.svg#icon-linkedin-1"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
+        </div>
       </div>
     </header>
     <main>
@@ -601,7 +601,7 @@
         </div>
       </section>
     </main>
-<!---==============================FOOTER===============================================-->
+    <!---==============================FOOTER===============================================-->
     <footer class="footer-section-dark-bg">
       <div class="container">
         <div class="footer-content">
@@ -673,7 +673,7 @@
     </footer>
     <!---==============================MODAL===============================================-->
     <div class="backdrop is-hidden">
-      <!--убрать is-hidden (чтобы появилась модалка)-->
+      <!--убрать is-hidden чтобы появилась модалка)-->
       <div class="modal">
         <button class="modal-close-btn" type="button">
           <svg class="modal-close-icon" width="8" height="8">
@@ -728,7 +728,8 @@
               placeholder="Text input"
             ></textarea>
           </div>
-         <!---==============================CHEСKBOX===============================================-->
+          <!---==============================CHEСKBOX===============================================-->
+          <div class="modal-checkbox-container">
             <input
               class="modal-visual visually-hidden"
               id="user-privacy"
@@ -742,10 +743,13 @@
                   <use href="./images/icons.svg#icon-done-white"></use>
                 </svg>
               </span>
-              I accept the terms and conditions of the
-              <a class="check-link" href="#">Privacy Policy</a>
+              <p class="checkbox-text">
+                I accept the terms and conditions of the
+                <a class="check-link" href="#">Privacy Policy</a>
+              </p>
             </label>
           </div>
+
           <button class="modal-btn" type="submit">Send</button>
         </form>
       </div>

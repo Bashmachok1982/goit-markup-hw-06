@@ -44,7 +44,7 @@ a {
 /* ================= HEADER ================= */
 .top-line-bg {
   position: relative;
-  z-index: 1;
+  z-index: 100;
   background: #fff;
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -65,6 +65,7 @@ a {
   color: #4d5ae5;
   display: flex;
   align-items: center;
+  margin-right: 76px;
 }
 .logo-studio {
   color: #2e2f42;
@@ -84,33 +85,22 @@ a {
 .site-menu-nav.current {
   color: #404bbf;
 }
-.site-menu-nav.current::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
-}
 .contacts {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 .contact-link {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
   color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ================= МОБИЛЬНАЯ ВЕРСИЯ (по умолчанию) ================= */
 .container {
-  max-width: 320px;
+  max-width: 767px;
   padding: 0 16px;
+  width: 100%;
 }
+
 .logo-link.logo {
   padding: 16px 0;
   width: 115px;
@@ -138,8 +128,6 @@ a {
   left: 0;
   width: 100%;
   height: 100vh;
-  max-width: 320px;
-  margin: 0 auto;
   padding: 24px 24px 40px 16px;
   background: #fff;
   box-sizing: border-box;
@@ -148,6 +136,7 @@ a {
   justify-content: space-between;
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
+  z-index: 999;
 }
 .mobile-menu.is-open {
   transform: translateX(0);
@@ -209,6 +198,9 @@ a {
   gap: 24px;
   justify-content: center;
 }
+.contact-link.current {
+  color: #4d5ae5;
+}
 .mobile-socials {
   display: flex;
   justify-content: center;
@@ -233,7 +225,7 @@ a {
   display: block;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.top-nav,
+.menu-nav,
 .address {
   display: none;
 }
@@ -261,11 +253,16 @@ a {
   }
   .address {
     font-style: normal;
-    padding: 16px 0;
   }
   .contacts {
     flex-direction: column;
     gap: 12px;
+  }
+  .contact-link {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
   }
 }
 /* ================= ДЕСКТОПНАЯ ВЕРСИЯ ================= */
@@ -294,6 +291,17 @@ a {
   .site-menu-nav:focus {
     color: #404bbf;
   }
+
+  .site-menu-nav.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+  }
   .contacts {
     flex-direction: row;
     gap: 40px;
@@ -304,6 +312,11 @@ a {
   .contact-link:hover,
   .contact-link:focus {
     color: #404bbf;
+  }
+  .contact-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 /* ===============================Общие селекторы для HERO=============================== */
@@ -346,10 +359,9 @@ a {
   white-space: nowrap;
 }
 /* Мобильная версия */
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .dark-bg {
-    width: 320px;
-    height: 432px;
+    max-width: 100%;
     padding: 72px 16px;
     background-image: linear-gradient(
         to bottom,
@@ -365,7 +377,7 @@ a {
     margin-bottom: 72px;
   }
 }
-@media (max-width: 320px) and (min-resolution: 2dppx) {
+@media (min-width: 320px) and (min-resolution: 2dppx) {
   .dark-bg {
     background-image: linear-gradient(
         to bottom,
@@ -378,7 +390,8 @@ a {
 /* Планшетная версия */
 @media (min-width: 768px) {
   .dark-bg {
-    width: 768px;
+    min-width: 768px;
+    margin: 0 auto;
     padding: 112px 0;
     background-image: linear-gradient(
         to bottom,
@@ -475,14 +488,10 @@ a {
   display: flex;
 }
 .section-title {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 120%;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
 .feature-title {
-  font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   letter-spacing: 0.02em;
@@ -494,41 +503,51 @@ a {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #434455;
+  max-width: 288px;
 }
 .feature-icon-box,
 .feature-icon {
   display: none;
 }
 /*Для мобильной версии*/
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .features-content {
     gap: 72px;
     flex-direction: column;
+    align-items: center;
   }
   .feature-title {
     text-align: center;
     font-weight: 700;
     font-size: 36px;
+    line-height: 111%;
   }
   .feature-text {
     font-weight: 500;
+    margin-top: 8px;
   }
 }
 /*Для планшетной версии*/
 @media (min-width: 768px) {
   .features-content {
-    gap: 24px;
+    gap: 72px;
+    column-gap: 24px;
     flex-wrap: wrap;
+    flex-direction: row;
   }
   .feature-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11111;
     margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    text-align: start;
   }
   .feature-text {
     font-weight: 500;
     max-width: 356px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 }
 /*Для десктопной версии*/
@@ -537,6 +556,9 @@ a {
     padding: 120px 0;
   }
   .features-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 24px;
   }
   .feature-icon-box {
@@ -560,6 +582,9 @@ a {
   }
   .feature-title {
     margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
   }
 }
 /*====================================Общие для секции НАША КОМАНДА=================================*/
@@ -639,7 +664,7 @@ a {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*Мобильная версия*/
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .team-list {
     gap: 72px;
     flex-direction: column;
@@ -659,6 +684,7 @@ a {
     padding: 0;
     margin: 0;
     list-style: none;
+    flex-direction: row;
   }
 }
 /*Десктопная версия*/
@@ -667,11 +693,12 @@ a {
     padding: 120px 0;
   }
   .team-list {
+    display: flex;
     gap: 24px;
+    flex-direction: row;
   }
   .team-card {
-    width: calc((100% – 72px) / 4);
-    flex-direction: column;
+    width: calc((100% - 72px) / 4);
   }
   .team-card:hover,
   .team-card:focus {
@@ -710,9 +737,6 @@ a {
   overflow: hidden;
   background: #fff;
   position: relative;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .portfolio-img {
   display: block;
@@ -746,12 +770,16 @@ a {
   display: none;
 }
 /*Мобильная версия*/
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .portfolio-list {
     flex-direction: column;
+    align-items: center;
   }
   .portfolio-item {
     width: 288px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   }
 }
 /*Планшетная версия*/
@@ -762,9 +790,13 @@ a {
     row-gap: 72px;
     column-gap: 24px;
     justify-content: center;
+    flex-direction: row;
   }
   .portfolio-item {
     width: 356px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   }
 }
 /*Десктопная версия*/
@@ -773,11 +805,14 @@ a {
     padding: 120px 0;
   }
   .portfolio-list {
+    display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    row-gap: 48px;
+    flex-direction: row;
   }
   .portfolio-item {
-    width: 360px;
+    width: calc((100% - 48px) / 3);
   }
   .portfolio-item:hover,
   .portfolio-item:focus {
@@ -896,7 +931,6 @@ a {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
-  margin-bottom: 16px;
 }
 .footer-form {
   display: flex;
@@ -925,7 +959,7 @@ a {
   font-family: 'Roboto', sans-serif;
   border-radius: 4px;
   padding: 8px 24px;
-  min-width: 165px;
+  width: 165px;
   height: 40px;
   background: #4d5ae5;
   border: none;
@@ -950,7 +984,7 @@ a {
   fill: white;
 }
 /*Для мобильной версии*/
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .footer-section-dark-bg {
     margin: 0 auto;
   }
@@ -958,6 +992,9 @@ a {
     align-items: center;
     gap: 72px;
     flex-direction: column;
+  }
+  .footer-input {
+    width: 288px;
   }
   .footer-content {
     align-items: center;
@@ -980,8 +1017,8 @@ a {
     text-align: center;
   }
   .footer-subscribe-btn {
-    margin-top: 0;
-    width: 100%;
+    width: 165px;
+    margin: 0 auto;
   }
 }
 /*Для планшетной версии*/
@@ -992,14 +1029,12 @@ a {
     flex-wrap: wrap;
     row-gap: 72px;
     column-gap: 24px;
+    flex-direction: row;
   }
   .footer-content {
     display: flex;
     flex-direction: column;
-  }
-  .footer-content,
-  .footer-subscribe {
-    margin-left: 92px;
+    align-items: flex-start;
   }
   .footer-subscribe {
     display: flex;
@@ -1011,6 +1046,12 @@ a {
   }
   .footer-subscribe-btn {
     margin-top: 0;
+  }
+  .footer-social-text {
+    text-align: start;
+  }
+  .footer-subscribe-text {
+    text-align: start;
   }
 }
 /*Для десктопной версии*/
@@ -1061,6 +1102,7 @@ a {
   background-color: rgba(46, 47, 66, 0.4);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
 }
 
 .modal {
@@ -1070,13 +1112,15 @@ a {
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 288px;
-  min-height: 623px;
+  min-height: auto; /*добавил*/
   background-color: #fcfcfc;
   border-radius: 4px;
   padding: 72px 16px 8px 16px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(204, 133, 133, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
 }
 .modal-close-btn {
   position: absolute;
@@ -1128,12 +1172,14 @@ a {
   margin-bottom: 16px;
 }
 .form-label {
-  display: block;
+  font-weight: 400;
   font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.16667;
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
 }
 .form-icon-box {
   position: relative;
@@ -1194,16 +1240,24 @@ a {
 .span-modal {
   height: 16px;
   width: 16px;
-  margin-right: 8px;
+  margin-right: 5px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
   fill: transparent;
+}
+.checkbox-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
 .checkbox-svg {
   opacity: 0;
@@ -1219,8 +1273,10 @@ a {
   fill: #ffffff;
 }
 .check-link {
-  color: #4d5ae5;
+  line-height: 1.33333;
   text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
 }
 .modal-btn {
   display: block;
@@ -1244,7 +1300,7 @@ a {
 }
 @media (min-width: 768px) {
   .modal {
-    width: 408px; /* шире */
+    width: 408px;
     min-height: 584px;
     padding: 72px 24px 24px 24px;
     max-width: none;
