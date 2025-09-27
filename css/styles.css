@@ -258,6 +258,16 @@ a {
     flex-direction: column;
     gap: 12px;
   }
+  .site-menu-nav.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+  }
   .contact-link {
     font-weight: 400;
     font-size: 12px;
@@ -341,7 +351,6 @@ a {
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #fff;
-  font-size: 56px;
   line-height: 1.07;
 }
 .hero-btn {
@@ -406,6 +415,7 @@ a {
   .hero-title {
     margin-bottom: 36px;
     max-width: 496px;
+    font-size: 56px;
   }
 }
 @media (min-width: 768px) and (min-resolution: 2dppx) {
@@ -441,6 +451,7 @@ a {
   .hero-title {
     max-width: 496px;
     margin-bottom: 48px;
+    font-size: 56px;
   }
   .hero-btn {
     display: block;
@@ -813,6 +824,7 @@ a {
   }
   .portfolio-item {
     width: calc((100% - 48px) / 3);
+    box-shadow: none;
   }
   .portfolio-item:hover,
   .portfolio-item:focus {
@@ -941,7 +953,7 @@ a {
 .footer-input {
   border: 1px solid #fff;
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   background-color: transparent;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -1030,6 +1042,7 @@ a {
     row-gap: 72px;
     column-gap: 24px;
     flex-direction: row;
+    max-width: 584px;
   }
   .footer-content {
     display: flex;
@@ -1043,6 +1056,9 @@ a {
     display: flex;
     flex-direction: row;
     gap: 24px;
+  }
+  .footer-input {
+    width: 288px;
   }
   .footer-subscribe-btn {
     margin-top: 0;
@@ -1063,11 +1079,11 @@ a {
   .footer-section-dark-bg .container {
     align-items: baseline;
     flex-direction: row;
-    justify-content: flex-start;
     flex-wrap: nowrap;
-    gap: 100px;
     max-width: 1158px;
     margin: 0 auto;
+    gap: unset;
+    justify-content: space-between;
   }
   .footer-content {
     margin: 0;
@@ -1079,6 +1095,9 @@ a {
   .footer-form {
     flex-direction: row;
     gap: 24px;
+  }
+  .footer-input {
+    width: 288px;
   }
   .footer-subscribe {
     margin-left: 0;
@@ -1112,7 +1131,7 @@ a {
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 288px;
-  min-height: auto; /*добавил*/
+  min-height: auto;
   background-color: #fcfcfc;
   border-radius: 4px;
   padding: 72px 16px 8px 16px;
